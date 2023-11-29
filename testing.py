@@ -24,4 +24,11 @@ class TestMorseCodeTranslator(unittest.TestCase):
         expected_english_text = "Hello"
         self.assertEqual(morse_to_text(morse_code), expected_english_text)
 
+    # Test case 3: Empty input error for encryption
+    def test_empty_input_encryption(self):
+        english_text = ""
+        with self.assertRaises(ValueError) as context:
+            text_to_morse(english_text)
+        self.assertEqual(str(context.exception), "Cannot Encrypt Empty Space")
+
         
