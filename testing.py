@@ -47,3 +47,11 @@ class TestMorseCodeTranslator(unittest.TestCase):
             text_to_morse(english_text)
         self.assertEqual(str(context.exception), "Please Enter a Valid Letter")
         
+    # Test case 6: Invalid Morse code sequence error for decryption (using an invalid Morse code sequence)
+    def test_invalid_morse_sequence_decryption(self):
+        # Using an invalid Morse code sequence
+        invalid_morse = ".--.-.---.-.--"  # Replace this with any invalid Morse code sequence
+        with self.assertRaises(ValueError) as context:
+            morse_to_text(invalid_morse)
+        self.assertEqual(str(context.exception), "Please Enter a Valid Letter")
+        
