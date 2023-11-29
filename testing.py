@@ -55,3 +55,14 @@ class TestMorseCodeTranslator(unittest.TestCase):
             morse_to_text(invalid_morse)
         self.assertEqual(str(context.exception), "Please Enter a Valid Letter")
         
+    # Test case 7: Test displaying history with empty history
+    def test_display_empty_history(self):
+        # Clearing the history before this test case
+        history.clear()
+        with patch('sys.stdout', new=StringIO()) as fake_out:
+            display_history()
+            output = fake_out.getvalue().strip()
+            self.assertEqual(output, "Translation History is Empty")
+
+    
+        
