@@ -62,7 +62,7 @@ def morse_to_text(morse_code):
                     break
             else:
                 # If an invalid Morse code sequence is encountered, prompts the user to enter a valid letter
-                return "Please Enter a Valid Letter"
+                raise ValueError("Please Enter a Valid Letter")
 
     # Capitalizing the first letter of each word in the decrypted text
     words = text.split(" ")
