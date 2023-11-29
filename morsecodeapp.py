@@ -38,7 +38,7 @@ def text_to_morse(text):
             morse_code += " "
         else:
             # If an invalid character is encountered, prompts the user to enter a valid letter
-            return "Please Enter a Valid Letter"
+            raise ValueError("Please Enter a Valid Letter")
     return morse_code.strip()
 
 # Function to convert Morse code to text
