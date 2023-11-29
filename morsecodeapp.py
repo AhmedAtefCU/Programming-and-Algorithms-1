@@ -112,4 +112,6 @@ def main():
                 # Prints an error message if empty space is attempted for decryption
                 print("Error:", e)
                 
-                
+        elif choice == "3":
+            # Displays the translation history
+            display_history()
