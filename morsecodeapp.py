@@ -125,4 +125,4 @@ def main():
             # Handles invalid user input
             print("Invalid choice. Please enter a valid option.")
             
-        
+        print()
