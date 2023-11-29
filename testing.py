@@ -75,4 +75,6 @@ class TestMorseCodeTranslator(unittest.TestCase):
             expected_output = f"Translation History:\nEnglish: {sample_entry['English']}, Morse Code: {sample_entry['Morse Code']}"
             self.assertEqual(output, expected_output)
         
+if __name__ == '__main__':
+    unittest.main()
         
