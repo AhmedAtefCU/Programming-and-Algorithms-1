@@ -115,3 +115,14 @@ def main():
         elif choice == "3":
             # Displays the translation history
             display_history()
+            
+        elif choice == "4":
+            # Exits the program
+            print("Exiting the Program.")
+            break
+
+        else:
+            # Handles invalid user input
+            print("Invalid choice. Please enter a valid option.")
+            
+        
