@@ -64,5 +64,15 @@ class TestMorseCodeTranslator(unittest.TestCase):
             output = fake_out.getvalue().strip()
             self.assertEqual(output, "Translation History is Empty")
 
-    
+    # Test case 8: Test displaying history with populated history
+    def test_display_populated_history(self):
+        # Adding a sample entry to history
+        sample_entry = {"English": "HELLO", "Morse Code": ".... . .-.. .-.. ---"}
+        history.append(sample_entry)
+        with patch('sys.stdout', new=StringIO()) as fake_out:
+            display_history()
+            output = fake_out.getvalue().strip()
+            expected_output = f"Translation History:\nEnglish: {sample_entry['English']}, Morse Code: {sample_entry['Morse Code']}"
+            self.assertEqual(output, expected_output)
+        
         
