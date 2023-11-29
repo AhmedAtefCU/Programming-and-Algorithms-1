@@ -68,3 +68,15 @@ def morse_to_text(morse_code):
     words = text.split(" ")
     decrypted_text = " ".join(word.capitalize() for word in words)
     return decrypted_text
+
+# Function to display translation history
+def display_history():
+    # Checking and displaying the translation history
+    if not history:
+        print("Translation History is Empty")
+    else:
+        print("Translation History:")
+        for entry in history:
+            # Prints the translation history including English text and corresponding Morse code
+            print(f"English: {entry.get('English', '')}, Morse Code: {entry.get('Morse Code', '')}")
+            
