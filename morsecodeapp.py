@@ -100,3 +100,16 @@ def main():
                 # Prints an error message if empty space is attempted for encryption
                 print("Error:", e)
                 
+        elif choice == "2":
+            # User input for Morse code to be converted to English text
+            morse_code_text = input("Enter the Morse code: ")
+            try:
+                # Tries to convert the entered Morse code to English text and handles empty space error
+                translated_text = morse_to_text(morse_code_text)
+                print("Translated English Text:", translated_text)
+                history.append({"Morse Code": morse_code_text, "English": translated_text})
+            except ValueError as e:
+                # Prints an error message if empty space is attempted for decryption
+                print("Error:", e)
+                
+                
