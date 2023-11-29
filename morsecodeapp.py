@@ -126,3 +126,7 @@ def main():
             print("Invalid choice. Please enter a valid option.")
             
         print()
+        
+# Run the main program
+if __name__ == '__main__':
+    main()
