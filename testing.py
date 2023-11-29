@@ -38,5 +38,12 @@ class TestMorseCodeTranslator(unittest.TestCase):
             morse_to_text(morse_code)
         self.assertEqual(str(context.exception), "Cannot Decrypt Empty Space")
 
-    
+    # Test case 5: Invalid character error for encryption (using a Chinese letter)
+    def test_invalid_character_encryption(self):
+        # Using a Chinese character not included in the dictionary
+        invalid_char = '你'  # Replace this with any Chinese character not in the dictionary
+        english_text = f"HELLO{invalid_char}"
+        with self.assertRaises(ValueError) as context:
+            text_to_morse(english_text)
+        self.assertEqual(str(context.exception), "Please Enter a Valid Letter")
         
