@@ -40,3 +40,31 @@ def text_to_morse(text):
             # If an invalid character is encountered, prompts the user to enter a valid letter
             return "Please Enter a Valid Letter"
     return morse_code.strip()
+
+# Function to convert Morse code to text
+def morse_to_text(morse_code):
+    # Handling empty input error for decryption
+    if morse_code.strip() == '':
+        raise ValueError("Cannot Decrypt Empty Space")
+    
+    # Conversion of Morse code to English text
+    text = ""
+    morse_code = morse_code.split(" ")
+    for code in morse_code:
+        if code == '':
+            # Adds a space for spaces in Morse code
+            text += ' '
+        else:
+            # Converts Morse code to respective characters of the English alphabet
+            for key, value in morse_code_dict.items():
+                if code == value:
+                    text += key
+                    break
+            else:
+                # If an invalid Morse code sequence is encountered, prompts the user to enter a valid letter
+                return "Please Enter a Valid Letter"
+
+    # Capitalizing the first letter of each word in the decrypted text
+    words = text.split(" ")
+    decrypted_text = " ".join(word.capitalize() for word in words)
+    return decrypted_text
