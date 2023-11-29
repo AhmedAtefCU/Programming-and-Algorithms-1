@@ -79,4 +79,24 @@ def display_history():
         for entry in history:
             # Prints the translation history including English text and corresponding Morse code
             print(f"English: {entry.get('English', '')}, Morse Code: {entry.get('Morse Code', '')}")
-            
+
+# Main program logic
+def main():
+    global history
+
+    while True:
+        display_menu()
+        choice = input("Enter your choice (1-4): ")
+        
+        if choice == "1":
+            # User input for text to be converted to Morse code
+            english_text = input("Enter the English text: ")
+            try:
+                # Tries to convert the entered text to Morse code and handles empty space error
+                translated_text = text_to_morse(english_text)
+                print("Translated Morse Code:", translated_text)
+                history.append({"English": english_text, "Morse Code": translated_text})
+            except ValueError as e:
+                # Prints an error message if empty space is attempted for encryption
+                print("Error:", e)
+                
